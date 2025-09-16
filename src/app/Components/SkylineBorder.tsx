@@ -2,13 +2,14 @@
 
 const SkylineBorder: React.FC = () => {
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white overflow-hidden">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        height="140"
         viewBox="0 0 1600 140"
-        preserveAspectRatio="none"
+        width="100%"
+        height="auto"
+        preserveAspectRatio="xMidYMax slice"
+        className="block"
       >
         {/* Background */}
         <rect width="1600" height="140" fill="#ffffff" />

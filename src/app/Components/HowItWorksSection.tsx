@@ -51,6 +51,11 @@ const HowItWorksSection = () => {
   const prevStep = () =>
     setCurrentStep((prev) => (prev - 1 + steps.length) % steps.length);
 
+  // Reset to first step on page load
+  useEffect(() => {
+    setCurrentStep(0);
+  }, []);
+
   // Auto-rotate with pause support
   useEffect(() => {
     if (isPaused) return;
@@ -61,16 +66,16 @@ const HowItWorksSection = () => {
   return (
     <section
       id="how-it-works"
-      className="bg-black text-white py-20 px-6 min-h-screen flex flex-col justify-center items-center"
+      className="bg-black text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center"
     >
-      <div className="max-w-5xl mx-auto w-full text-center">
+      <div className="max-w-6xl mx-auto w-full text-center">
         {/* Section Heading */}
         <motion.h3
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
         >
           How It <span className="text-yellow-400">Works</span>
         </motion.h3>
@@ -79,7 +84,7 @@ const HowItWorksSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-gray-300 text-lg md:text-xl mb-12 leading-relaxed max-w-3xl mx-auto"
+          className="text-gray-300 text-base sm:text-lg md:text-xl mb-12 leading-relaxed max-w-3xl mx-auto"
         >
           Experience a seamless six-step process designed to bring your
           construction vision to life with precision, transparency, and
@@ -92,42 +97,44 @@ const HowItWorksSection = () => {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentStep}
-              initial={{ opacity: 0, x: 200 }}   // Slide in from right
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -200 }}     // Slide out to left
-              transition={{ duration: 0.6, ease: 'easeInOut' }}
-              className="flex flex-col items-center text-center gap-4 bg-[#111] border border-gray-800 rounded-2xl shadow-xl max-w-2xl w-full p-8 h-[420px]"
-            >
-              {/* SVG Illustration */}
-              <div className="w-full flex justify-center flex-1">
-                <Image
-                  src={steps[currentStep].illustration}
-                  alt={steps[currentStep].title}
-                  width={300}
-                  height={200}
-                  className="object-contain h-auto max-h-48"
-                />
-              </div>
+          <div className="flex flex-col items-center text-center gap-4 bg-[#111] border border-gray-800 rounded-2xl shadow-xl w-full max-w-2xl p-6 sm:p-8 min-h-[360px] sm:min-h-[420px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentStep}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.6, ease: 'easeInOut' }}
+                className="flex flex-col items-center text-center gap-4 w-full"
+              >
+                {/* SVG Illustration */}
+                <div className="w-full flex justify-center flex-1">
+                  <Image
+                    src={steps[currentStep].illustration}
+                    alt={steps[currentStep].title}
+                    width={300}
+                    height={200}
+                    className="object-contain h-auto max-h-32 sm:max-h-48 w-full"
+                  />
+                </div>
 
-              {/* Title */}
-              <h4 className="text-2xl font-semibold text-white mt-2">
-                {steps[currentStep].title}
-              </h4>
+                {/* Title */}
+                <h4 className="text-xl sm:text-2xl font-semibold text-white mt-2">
+                  {steps[currentStep].title}
+                </h4>
 
-              {/* Description */}
-              <p className="text-gray-400 text-sm leading-relaxed max-w-lg">
-                {steps[currentStep].description}
-              </p>
+                {/* Description */}
+                <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg">
+                  {steps[currentStep].description}
+                </p>
 
-              {/* Step Counter */}
-              <p className="text-gray-500 text-xs mt-2">
-                Step {currentStep + 1} of {steps.length}
-              </p>
-            </motion.div>
-          </AnimatePresence>
+                {/* Step Counter */}
+                <p className="text-gray-500 text-xs mt-2">
+                  Step {currentStep + 1} of {steps.length}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
           {/* Dots Navigation */}
           <div className="flex justify-center mt-6 gap-3">

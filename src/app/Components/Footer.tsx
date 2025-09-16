@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { Facebook, Twitter, Instagram, Mail, Phone, ArrowUp } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
-// Import your components
 import PrivacyPolicy from './privacy-policy'
 import TermsAndConditions from './terms-and-conditions'
 
@@ -65,32 +64,28 @@ const Footer: React.FC = () => {
 
   return (
     <div className="relative">
-      <footer className="bg-black text-white w-full font-sans relative overflow-visible">
-        
-        {/* Top Section: Three Columns */}
-        <div className="pt-12 max-w-6xl mx-auto flex justify-between px-6 lg:px-12">
-          
+      <footer className="bg-black text-white w-full font-sans relative">
+        {/* Top Section */}
+        <div className="pt-12 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 text-center lg:text-left">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-5 flex-1"
+            className="space-y-5 flex flex-col items-center lg:items-start"
           >
-            <div>
-              <h2 className="text-3xl font-extrabold mb-1 tracking-tight">
-                <span className="text-yellow-400">HT</span> Developer
-              </h2>
-              <p className="text-white text-xs">By Javed Shaikh</p>
-            </div>
+            <h2 className="text-3xl font-extrabold">
+              <span className="text-yellow-400">HT</span> Developer
+            </h2>
+            <p className="text-xs">By Javed Shaikh</p>
 
-            <div className="space-y-3 text-white">
-              <div className="flex items-center space-x-3">
+            <div className="space-y-2">
+              <div className="flex items-center justify-center lg:justify-start space-x-2">
                 <Phone size={16} className="text-yellow-400" />
                 <span>+91 9420781681</span>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center justify-center lg:justify-start space-x-2">
                 <Mail size={16} className="text-yellow-400" />
                 <span>htdeveloper.contact@gmail.com</span>
               </div>
@@ -120,18 +115,19 @@ const Footer: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="space-y-4 flex-1 flex flex-col items-center"
+            className="space-y-4 flex flex-col items-center"
           >
-            <h3 className="text-white font-semibold text-base">Quick Links</h3>
-            <ul className="space-y-3 text-center">
+            <h3 className="font-semibold text-base underline underline-offset-4 decoration-yellow-400">
+              Quick Links
+            </h3>
+            <ul className="space-y-2">
               {quickLinks.map((link, i) => (
                 <li key={i}>
                   <motion.button
                     onClick={() => handleScrollToSection(link.href)}
-                    className="text-white hover:text-yellow-400 transition-colors flex items-center space-x-2 group cursor-pointer"
+                    className="hover:text-yellow-400 transition-colors"
                   >
-                    <span className="w-1 h-1 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span>{link.name}</span>
+                    {link.name}
                   </motion.button>
                 </li>
               ))}
@@ -144,18 +140,19 @@ const Footer: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-4 flex-1 flex flex-col items-end"
+            className="space-y-4 flex flex-col items-center lg:items-end"
           >
-            <h3 className="text-white font-semibold text-base">Our Services</h3>
-            <ul className="space-y-3 text-right">
+            <h3 className="font-semibold text-base underline underline-offset-4 decoration-yellow-400">
+              Our Services
+            </h3>
+            <ul className="space-y-2">
               {services.map((service, i) => (
                 <li key={i}>
                   <motion.button
                     onClick={() => handleScrollToSection('services')}
-                    className="text-white hover:text-yellow-400 transition-colors flex items-center space-x-2 group justify-end"
+                    className="hover:text-yellow-400 transition-colors"
                   >
-                    <span className="w-1 h-1 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span>{service}</span>
+                    {service}
                   </motion.button>
                 </li>
               ))}
@@ -164,8 +161,8 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-10 border-t border-gray-700 pt-6 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-white text-xs px-6 lg:px-12 mb-12">
-          <div className="text-left mb-4 md:mb-0">
+        <div className="mt-10 border-t border-gray-700 pt-6 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs px-6 gap-4 text-center md:text-left">
+          <div>
             <p>© 2025 HT Developer. All Rights Reserved.</p>
             <p className="text-white/70">
               Website developed by{' '}
@@ -180,17 +177,11 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center space-x-6 text-sm">
-            <button
-              onClick={() => setOpen('privacy')}
-              className="hover:text-yellow-400 transition-colors"
-            >
+          <div className="flex space-x-6">
+            <button onClick={() => setOpen('privacy')} className="hover:text-yellow-400 transition-colors">
               Privacy Policy
             </button>
-            <button
-              onClick={() => setOpen('terms')}
-              className="hover:text-yellow-400 transition-colors"
-            >
+            <button onClick={() => setOpen('terms')} className="hover:text-yellow-400 transition-colors">
               Terms & Conditions
             </button>
           </div>
@@ -246,8 +237,7 @@ const Footer: React.FC = () => {
         animate={{ opacity: showScrollTop ? 1 : 0, scale: showScrollTop ? 1 : 0 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-yellow-400 hover:bg-yellow-500 text-white rounded-full flex items-center justify-center shadow-lg z-40 transition-colors duration-300"
-        style={{ bottom: '0px' }}
+        className="fixed bottom-28 right-6 w-12 h-12 bg-yellow-400 hover:bg-yellow-500 text-white rounded-full flex items-center justify-center shadow-lg z-40 transition-colors duration-300"
         aria-label="Scroll to top"
       >
         <ArrowUp size={20} />
