@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 interface Service {
   id: string;
-  icon: JSX.Element;
+  icon: React.ReactNode; // ✅ fixed typing
   title: string;
   description: string;
   features: string[];
