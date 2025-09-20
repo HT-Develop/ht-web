@@ -11,7 +11,7 @@ import SkylineBorder from './Components/SkylineBorder';
 import Footer from './Components/Footer';
 import WhatsAppButton from './Components/WhatsAppButton';
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
   title: 'HT Developer - Premium Construction Services | Javed Shaikh',
@@ -20,15 +20,18 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1, // Prevent zooming
+  userScalable: false, // Disable pinch-to-zoom
 };
 
 const Home: React.FC = () => {
   return (
-    <main className="relative w-full">
+    <main className="relative w-full min-h-screen">
       <Navbar />
       <Hero />
       <WhyChooseUs />
@@ -38,7 +41,7 @@ const Home: React.FC = () => {
       <AboutUs />
       <ScrollingGallery />
       <ContactUs />
-      <SkylineBorder /> {/* SVG skyline above footer */}
+      <SkylineBorder />
       <Footer />
       <WhatsAppButton />
     </main>
