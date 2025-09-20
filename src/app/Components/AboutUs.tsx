@@ -76,7 +76,7 @@ const AboutUsSection = () => {
           </div>
 
           {/* Right Content - Founder Card */}
-          <div className="bg-gray-50 rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-gray-50 rounded-2xl p-8 shadow-2xl hover:shadow-2xl transition-shadow duration-300">
             {/* Founder Photo Placeholder */}
             <div className="w-24 h-24 mx-auto mb-6 bg-gray-800 rounded-full flex items-center justify-center">
               <span className="text-2xl text-white font-bold">JS</span>
@@ -96,20 +96,7 @@ const AboutUsSection = () => {
               and integrity in every project."
             </blockquote>
 
-            <div className="text-center">
-              {/* Styled Button */}
-              <button className="flex items-stretch border border-black rounded-full overflow-hidden group w-fit mx-auto">
-                <span className="px-6 py-2 text-sm font-medium text-black bg-transparent">
-                  Meet Our Team
-                </span>
-                <span className="bg-black text-white px-4 flex items-center justify-center">
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform duration-200 group-hover:translate-x-1"
-                  />
-                </span>
-              </button>
-            </div>
+            {/* Removed Meet Our Team button */}
           </div>
         </div>
       </div>

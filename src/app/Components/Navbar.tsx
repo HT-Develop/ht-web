@@ -30,7 +30,6 @@ const Navigation = () => {
     { name: "Home", href: "home" },
     { name: "Services", href: "services" },
     { name: "Projects", href: "projects" },
-    { name: "Clients", href: "clients" },
     { name: "About", href: "about-us" },
     { name: "Contact", href: "contact-us" },
   ];
@@ -81,17 +80,17 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-16 relative">
+    <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent pt-2 md:pt-0">
+      <div className="max-w-7xl mx-auto pl-0 pr-6 flex justify-between items-center h-16 relative">
         {/* === Logo === */}
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="cursor-pointer"
+          className="cursor-pointer flex-shrink-0"
         >
           <img
-            src="/LOGO.png"
+            src="/LOGOHT1.png"
             alt="HT Developer Logo"
-            className="h-13 w-auto"
+            className="h-12 sm:h-14 md:h-16 lg:h-20 xl:h-24 w-auto mx-4 md:mx-0"
           />
         </motion.div>
 

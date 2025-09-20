@@ -5,6 +5,7 @@ import HowItWorks from './Components/HowItWorksSection';
 import Services from './Components/Services';
 import Projects from './Components/Projects';
 import AboutUs from './Components/AboutUs';
+import ScrollingGallery from './Components/ScrollingGallery';
 import ContactUs from './Components/ContactUs';
 import SkylineBorder from './Components/SkylineBorder';
 import Footer from './Components/Footer';
@@ -36,6 +37,7 @@ const Home: React.FC = () => {
       <Services />
       <Projects />
       <AboutUs />
+      <ScrollingGallery/>
       <ContactUs />
       <SkylineBorder /> {/* SVG skyline above footer */}
       <Footer />

@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
 
   return (
     <div className="relative">
-      <footer className="bg-black text-white w-full font-sans relative">
+      <footer className="bg-black text-white w-full font-sans relative pb-16 sm:pb-24">
         {/* Top Section */}
         <div className="pt-12 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 text-center lg:text-left">
           {/* Left Column */}
@@ -140,7 +140,7 @@ const Footer: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-4 flex flex-col items-center lg:items-end"
+            className="space-y-4 flex flex-col items-center"
           >
             <h3 className="font-semibold text-base underline underline-offset-4 decoration-yellow-400">
               Our Services
