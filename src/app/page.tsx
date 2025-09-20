@@ -11,7 +11,7 @@ import SkylineBorder from './Components/SkylineBorder';
 import Footer from './Components/Footer';
 import WhatsAppButton from './Components/WhatsAppButton';
 
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'HT Developer - Premium Construction Services | Javed Shaikh',
@@ -20,12 +20,10 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-};
-
-// ✅ Separate viewport export
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
 };
 
 const Home: React.FC = () => {
