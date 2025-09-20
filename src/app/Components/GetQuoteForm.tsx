@@ -56,14 +56,42 @@ const GetQuoteForm: React.FC<GetQuoteFormProps> = ({ onClose }) => {
     }
   };
 
-  const handleConfirm = () => {
+  // Updated handleConfirm to submit to Formcarry
+  const handleConfirm = async () => {
     setConfirmOpen(false);
     setSuccessOpen(true);
 
-    setTimeout(() => {
+    // Prepare form data for Formcarry
+    const data = new FormData();
+    data.append('name', formData.name);
+    data.append('email', formData.email);
+    data.append('phone', formData.phone);
+    data.append('message', formData.message);
+
+    try {
+      const res = await fetch('https://formcarry.com/s/llHLuNC3mr2', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: data,
+      });
+
+      if (res.ok) {
+        // Show final confirmation after a short delay
+        setTimeout(() => {
+          setSuccessOpen(false);
+          setFinalConfirmOpen(true);
+        }, 2000);
+      } else {
+        setSuccessOpen(false);
+        alert('❌ Failed to submit the form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
       setSuccessOpen(false);
-      setFinalConfirmOpen(true);
-    }, 2000);
+      alert('❌ Something went wrong. Please try again later.');
+    }
   };
 
   return (

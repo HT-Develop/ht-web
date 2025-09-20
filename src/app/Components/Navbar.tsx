@@ -11,6 +11,7 @@ const Navigation = () => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
   const [finalConfirmOpen, setFinalConfirmOpen] = useState(false);
+  const [loading, setLoading] = useState(false); // Added loading state
 
   // === Form State ===
   const [formData, setFormData] = useState({
@@ -68,15 +69,48 @@ const Navigation = () => {
     }
   };
 
-  const handleConfirm = () => {
+  // Updated handleConfirm to submit to Formcarry
+  const handleConfirm = async () => {
     setConfirmOpen(false);
     setSuccessOpen(true);
+    setLoading(true);
 
-    // Show "Processing" first, then final success
-    setTimeout(() => {
+    // Prepare form data for Formcarry
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("message", formData.message);
+
+    try {
+      const res = await fetch("https://formcarry.com/s/llHLuNC3mr2", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: data,
+      });
+
+      if (res.ok) {
+        setTimeout(() => {
+          setSuccessOpen(false);
+          setFinalConfirmOpen(true);
+          setLoading(false);
+          // Reset form after successful submission
+          setFormData({ name: "", email: "", phone: "", message: "" });
+          setTouched({ name: false, email: false, phone: false, message: false });
+        }, 2000);
+      } else {
+        setSuccessOpen(false);
+        setLoading(false);
+        alert("❌ Failed to submit the form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
       setSuccessOpen(false);
-      setFinalConfirmOpen(true);
-    }, 2000);
+      setLoading(false);
+      alert("❌ Something went wrong. Please try again later.");
+    }
   };
 
   return (
@@ -267,12 +301,12 @@ const Navigation = () => {
 
                 <motion.button
                   type="submit"
-                  disabled={!isValid}
+                  disabled={!isValid || loading}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   className="px-4 py-2 bg-yellow-400 text-black font-bold rounded disabled:opacity-50"
                 >
-                  Submit
+                  {loading ? "Submitting..." : "Submit"}
                 </motion.button>
               </div>
             </form>
