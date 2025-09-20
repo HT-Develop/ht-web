@@ -90,7 +90,7 @@ const Navigation = () => {
           <img
             src="/LOGOHT1.png"
             alt="HT Developer Logo"
-            className="h-12 sm:h-14 md:h-16 lg:h-20 xl:h-24 w-auto mx-4 md:mx-0"
+            className="h-12 sm:h-14 md:h-16 lg:h-18 xl:h-22 w-auto mx-4 md:mx-0"
           />
         </motion.div>
 
