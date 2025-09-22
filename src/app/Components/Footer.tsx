@@ -38,9 +38,9 @@ const Footer: React.FC = () => {
   }
 
   const socialLinks: SocialLink[] = [
-    { icon: <Facebook size={20} />, href: 'https://www.facebook.com/htconstructions', label: 'Facebook' },
-    { icon: <Instagram size={20} />, href: 'https://www.instagram.com/htconstructions', label: 'Instagram' },
-    { icon: <Twitter size={20} />, href: 'https://twitter.com/htconstructions', label: 'Twitter' },
+    { icon: <Facebook size={20} />, href: 'https://www.facebook.com', label: 'Facebook' },
+    { icon: <Instagram size={20} />, href: 'https://www.instagram.com', label: 'Instagram' },
+    { icon: <Twitter size={20} />, href: 'https://twitter.com', label: 'Twitter' },
   ]
 
   const quickLinks: QuickLink[] = [
@@ -160,32 +160,32 @@ const Footer: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="mt-10 border-t border-gray-700 pt-6 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs px-6 gap-4 text-center md:text-left">
-          <div>
-            <p>© 2025 HT Developer. All Rights Reserved.</p>
-            <p className="text-white/70">
-              Website developed by{' '}
-              <a
-                href="https://techmystry.com"
-                className="text-yellow-400 font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                TechMystry
-              </a>
-            </p>
-          </div>
+          {/* Footer Bottom */}
+          <div className="mt-10 border-t border-gray-700 pt-6 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs px-6 gap-4 text-center md:text-left">
+            <div>
+              <p>© 2025 HT Developer. All Rights Reserved.</p>
+              <p className="text-white/70">
+                Website developed by{" "}
+                <a
+                  href="https://wa.me/918805526198"
+                  className="text-yellow-400 font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  TechMystry
+                </a>
+              </p>
+            </div>
 
-          <div className="flex space-x-6">
-            <button onClick={() => setOpen('privacy')} className="hover:text-yellow-400 transition-colors">
-              Privacy Policy
-            </button>
-            <button onClick={() => setOpen('terms')} className="hover:text-yellow-400 transition-colors">
-              Terms & Conditions
-            </button>
+            <div className="flex space-x-6">
+              <button onClick={() => setOpen('privacy')} className="hover:text-yellow-400 transition-colors">
+                Privacy Policy
+              </button>
+              <button onClick={() => setOpen('terms')} className="hover:text-yellow-400 transition-colors">
+                Terms & Conditions
+              </button>
+            </div>
           </div>
-        </div>
       </footer>
 
       {/* Privacy Policy Modal */}
