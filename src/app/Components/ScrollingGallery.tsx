@@ -8,6 +8,8 @@ const images: string[] = [
   "/Gallary/img2.jpeg",
   "/Gallary/img3.jpeg",
   "/Gallary/img4.jpeg",
+  "/Gallary/img5.jpeg",
+  "/Gallary/img6.jpeg",
 ];
 
 const InfiniteScrollGallery = () => {

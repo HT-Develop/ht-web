@@ -6,12 +6,12 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      image:
-        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Modern Residential Complex',
+      image: "/Gallary/img5.jpeg",
+      title: "Modern Residential Complex",
       description:
-        'A state-of-the-art residential complex featuring modern design, spacious layouts, and high-quality finishes.',
+        "A state-of-the-art residential complex featuring modern design, spacious layouts, and high-quality finishes.",
     },
+
     {
       id: 2,
       image:
