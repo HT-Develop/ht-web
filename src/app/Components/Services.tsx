@@ -42,7 +42,7 @@ const Services = () => {
       description:
         'Custom homes, villas, and residential complexes built with premium materials and exceptional craftsmanship.',
       features: ['Custom Home Design', 'Villa Construction', 'Apartment Complexes', 'Interior Design'],
-      image: '/residential.jpg',
+      image: '/Gallary/img-5.png',
     },
     {
       id: 'commercial',
@@ -96,9 +96,8 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div
-          className={`text-center mb-12 sm:mb-20 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+          className={`text-center mb-12 sm:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
             Our <span className="text-yellow-400">Services</span>

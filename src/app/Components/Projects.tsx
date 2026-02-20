@@ -6,7 +6,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      image: "/Gallary/img5.jpeg",
+      image: "/Gallary/img-5.png",
       title: "Modern Residential Complex",
       description:
         "A state-of-the-art residential complex featuring modern design, spacious layouts, and high-quality finishes.",
