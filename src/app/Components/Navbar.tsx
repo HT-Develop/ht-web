@@ -28,11 +28,12 @@ const Navigation = () => {
   });
 
   const navItems = [
-    { name: "Home", href: "home" },
-    { name: "Services", href: "services" },
-    { name: "Projects", href: "projects" },
-    { name: "About", href: "about-us" },
-    { name: "Contact", href: "contact-us" },
+    { name: "Home", href: "#home" },
+    { name: "Services", href: "#services" },
+    { name: "Projects", href: "#projects" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "About", href: "#about-us" },
+    { name: "Contact", href: "#contact-us" },
   ];
 
   // === Validation ===
@@ -133,7 +134,7 @@ const Navigation = () => {
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={`#${item.href}`}
+              href={item.href}
               className="relative hover:text-yellow-400 transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-400 after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.name}
@@ -185,7 +186,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <a
                 key={item.href}
-                href={`#${item.href}`}
+                href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className="hover:text-yellow-400 transition-colors"
               >

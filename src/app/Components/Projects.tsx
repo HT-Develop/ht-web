@@ -4,16 +4,12 @@ import React from 'react';
 
 const ProjectsSection = () => {
   const projects = [
+    { id: 1, category: "Residential", title: "Modern Villa", image: "/Gallery/img1.jpeg", description: "A beautiful modern villa with sustainable design." },
+    { id: 2, category: "Commercial", title: "City Plaza", image: "/Gallery/img2.jpeg", description: "State-of-the-art office complex in the city heart." },
+    { id: 3, category: "Industrial", title: "Smart Factory", image: "/Gallery/img3.jpeg", description: "Automated manufacturing facility with solar power." },
+    { id: 4, category: "Residential", title: "Luxury Apartment", image: "/Gallery/img4.jpeg", description: "High-end apartments with panoramic views." },
     {
-      id: 1,
-      image: "/Gallary/img-5.png",
-      title: "Modern Residential Complex",
-      description:
-        "A state-of-the-art residential complex featuring modern design, spacious layouts, and high-quality finishes.",
-    },
-
-    {
-      id: 2,
+      id: 5,
       image:
         'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       title: 'Contemporary Family Home',
@@ -21,7 +17,7 @@ const ProjectsSection = () => {
         'A beautifully designed family home that blends contemporary architecture with functional, comfortable living spaces.',
     },
     {
-      id: 3,
+      id: 6,
       image:
         'https://images.unsplash.com/photo-1600566753151-384129cf4e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       title: 'Luxury Modern Villa',

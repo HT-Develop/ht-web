@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true, // ✅ disables ESLint checks during Vercel builds
-  },
+  // Next.js 15+: eslint.ignoreDuringBuilds removed from NextConfig type.
+  // ESLint is not run during `next build` by default unless explicitly added to scripts.
 };
 
 export default nextConfig;

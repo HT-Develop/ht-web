@@ -4,12 +4,12 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const images: string[] = [
-  "/Gallary/img1.jpeg",
-  "/Gallary/img2.jpeg",
-  "/Gallary/img3.jpeg",
-  "/Gallary/img4.jpeg",
-  "/Gallary/img-5.png",
-  "/Gallary/img-6.png",
+  "/Gallery/img1.jpeg",
+  "/Gallery/img2.jpeg",
+  "/Gallery/img3.jpeg",
+  "/Gallery/img4.jpeg",
+  "/Gallery/img-5.png",
+  "/Gallery/img-6.png",
 ];
 
 const InfiniteScrollGallery = () => {
