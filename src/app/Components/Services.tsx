@@ -42,7 +42,7 @@ const Services = () => {
       description:
         'Custom homes, villas, and residential complexes built with premium materials and exceptional craftsmanship.',
       features: ['Custom Home Design', 'Villa Construction', 'Apartment Complexes', 'Interior Design'],
-      image: '/Gallary/img-5.png',
+      image: '/Gallary/img-6.png',
     },
     {
       id: 'commercial',
